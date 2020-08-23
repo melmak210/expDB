@@ -1,4 +1,3 @@
--- Expense tracker table
 
 CREATE TABLE expType(
 exp_id serial primary key,
