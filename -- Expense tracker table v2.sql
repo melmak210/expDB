@@ -77,16 +77,11 @@ begin
                 GrndTotal := ExpTotal + GSTa;
                 return next rec;
         end loop;
-
-        if (ExpTotal = 0) then
-                rec := (null,null,null,'No Expense',null, null);
-        else
                 
-                rec := (rec.period,rec.type,rec.vendor, ExpTotal, GSTa);
-                sum := (null, null, 'Total Amount', addAmt, addGst);
-                E_line := (null, null, null, null, null);
-                Total := (null, null, 'Grand Total GST Incl', null, GrndTotal);
-        end if;
+        rec := (rec.period,rec.type,rec.vendor, ExpTotal, GSTa);
+        sum := (null, null, 'Total Amount', addAmt, addGst);
+        E_line := (null, null, null, null, null);
+        Total := (null, null, 'Grand Total GST Incl', null, GrndTotal);
 
         return next E_line;
         return next sum;
